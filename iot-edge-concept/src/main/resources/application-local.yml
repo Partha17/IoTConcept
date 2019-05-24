@@ -1,0 +1,29 @@
+#Server Configuration
+server:
+  port: 5000
+
+#Database Configuration
+spring:
+  http:
+        multipart:
+            max-file-size: 5MB
+            max-request-size: 20MB
+  thymeleaf:
+        cache: false
+        prefix: classpath:/templates
+  datasource:
+    url: jdbc:mysql://localhost:3306/ipmtest?autoReconnect=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    testOnBorrow: true
+    validationQuery: SELECT 1    
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: true
+        format_sql: false
+        dialect : org.hibernate.dialect.MySQL5InnoDBDialect
+      #  hbm2ddl:
+       #   auto: create
